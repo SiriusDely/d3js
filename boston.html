@@ -4,6 +4,18 @@
     <script src="https://d3js.org/d3.v4.min.js"></script>
     <script src="neighborhoods.js"></script>
     <script src="rodents.js"></script>
+    <style>
+      #neighborhoods path {
+        fill: #ccc;
+      }
+      #rodents path {
+        fill: #900;
+        stroke: #999;
+      }
+      #rodents path:hover {
+        fill: black;
+      }
+    </style>
   </head>
   <body>
   <script>
@@ -31,7 +43,7 @@
       .data(neighborhoods_json.features)
       .enter()
       .append('path')
-      .attr('fill', '#ccc')
+      // .attr('fill', '#ccc')
       .attr('d', geoPath);
 
     var rodents = svg.append('g')
