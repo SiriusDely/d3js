@@ -19,6 +19,7 @@ var svg = d3.select("body").append("svg")
   .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")");
 
 d3.csv("data/boston-data.csv", type, function(error, data) {
+  console.log(data);
   var path = svg.datum(data).selectAll("path")
     .data(pie)
     .enter().append("path")
