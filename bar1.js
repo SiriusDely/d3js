@@ -7,7 +7,7 @@ var m = 30;
 var xAxisLength = 100,
   yAxisLength = 100;
 
-d3.csv('/data/rat-data.csv', function(d) {
+d3.csv('data/rat-data.csv', function(d) {
   return {
     city: d.city,
     rats: +d.rats

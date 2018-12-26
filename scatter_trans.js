@@ -1,4 +1,4 @@
-d3.csv('/data/coffee_rodents_transform.csv', function(d) {
+d3.csv('data/coffee_rodents_transform.csv', function(d) {
   return {
     city: d.city,
     rats2015: +d.rats_2015,
