@@ -52,8 +52,10 @@ var context = svg.append("g")
   .attr("class", "context")
   .attr("transform", "translate(" + margin2.left + "," + margin2.top + ")");
 
-d3.csv("data/sp500.csv", type, function(error, data) {
+// d3.csv("data/sp500.csv", type, function(error, data) {
+d3.csv("data/unemployment_2005_2015.csv", type, function(error, data) {
   if (error) throw error;
+  // console.log(data);
 
   x.domain(d3.extent(data, function(d) { return d.date; }));
   y.domain([0, d3.max(data, function(d) { return d.price; })]);
@@ -119,6 +121,6 @@ function zoomed() {
 
 function type(d) {
   d.date = parseDate(d.date);
-  d.price = +d.price;
+  d.price = +d.rate;
   return d;
 }
