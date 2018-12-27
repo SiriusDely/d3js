@@ -45,6 +45,14 @@ function ready(error, us, unemployment) {
       // pass rate to color function, return color based on scale
       return colors(rateById[d.id]); // get rate value for specific object
     })
-    .style('stroke', 'black');
+    // .style('stroke', 'black')
+  ;
+
+  svg.append('path')
+    .datum(topojson.mesh(us, us.objects.states, function(a, b) {
+      return a.id !== b.id;
+    }))
+    .attr('class', 'states')
+    .attr('d', path);
 
 }
