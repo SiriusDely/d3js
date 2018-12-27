@@ -1,0 +1,30 @@
+body {
+  position: absolute;
+  font-family: 'Proxima Nova', 'Montserrat', sans-serif;
+}
+
+h1, h2 {
+  position: absolute;
+  left: 10px;
+  font-size: 1.3em;
+  font-weight: 100;
+}
+
+h2 {
+  top: 30px;
+  font-size: 1em;
+}
+/*
+.incident {
+  fill: steelblue;
+}
+*/
+.hover {
+  fill: yellow;
+}
+
+#sliderContainer {
+  text-align: center;
+  position: relative;
+  top: 600px;
+}
