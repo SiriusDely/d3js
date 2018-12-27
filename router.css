@@ -1,0 +1,9 @@
+path {
+  stroke: #fff;
+  fill-rule: evenodd;
+}
+
+.tooltip {
+  font-size: 12px;
+  font-family: Arial, sans-serif;
+}
