@@ -1,0 +1,45 @@
+body {
+  position: absolute;
+  font-family: 'Proxima Nova', 'Montserrat', sans-serif;
+}
+
+.subunit.IDN {
+  fill: #AEEE00;
+}
+
+.subunit.MYS {
+  fill: #FFB03B;
+}
+
+.subunit.SGP {
+  fill: #FCFAE1;
+}
+
+.subunit.BRN {
+  fill: #BD8D46;
+}
+
+.subunit.PNB {
+  fill: #F3FFE2;
+}
+
+.subunit.PNX {
+  fill: #F3FFE2;
+}
+
+.province-border {
+  fill: none;
+  stroke: red;
+}
+
+.subunit-label {
+  fill: grey;
+  fill-opacity: .7;
+  font-weight: 300;
+  text-anchor: middle;
+  font-size: 12px;
+}
+
+.subunit-label.IDN {
+  font-size: 2.5em;
+}
