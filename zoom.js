@@ -10,17 +10,24 @@ var projection = d3.geo.albersUsa()
 var path = d3.geo.path()
   .projection(projection);
 
+var zoom = d3.behavior.zoom()
+  .translate(projection.translate())
+  .scale(projection.scale())
+  .scaleExtent([height, 8 * height])
+  .on('zoom', handleOnZoom);
+
 var svg = d3.select('body').append('svg')
   .attr('width', width)
   .attr('height', height);
 
-svg.append('rect')
+var g = svg.append('g')
+  .call(zoom);
+
+g.append('rect')
   .attr('class', 'background')
   .attr('width', width)
   .attr('height', height)
   .on('click', handleOnClick);
-
-var g = svg.append('g');
 
 d3.json('./data/us.json', function(err, us) {
   if (err) { throw err; }
@@ -71,3 +78,11 @@ function handleOnClick(d) {
       'scale(' + k + ')translate(' + -x + ',' + -y + ')')
     .attr('stroke-width', 1.5 / k + 'px');
 }
+
+function handleOnZoom() {
+  // console.log('handleOnZoom');
+  return;
+  projection.translate(d3.event.translate).scale(d3.event.scale);
+  g.selectAll('path').attr('d', path);
+}
+
